@@ -17,8 +17,16 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 def verbing(s):
-    # +++your code here+++
-    return
+    result = ''
+    if len(s) >= 3:
+        check = s[-3:]
+        if check == 'ing':
+            result += s + 'ly'
+        else:
+            result += s + 'ing'
+        return result
+    else: 
+        return s
 
 
 # E. not_bad
@@ -30,8 +38,18 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    # +++your code here+++
-    return
+    result = ''
+    not_index = s.find('not')
+    bad_index = s.find('bad')
+    if (not_index > 0 and bad_index > 0):
+        if (bad_index > not_index):
+            result += s[:not_index] + 'good' + s[(bad_index + 3):]
+        else:
+            result += s
+    else:
+        result += s        
+    return result
+
 
 
 # F. front_back
@@ -42,8 +60,26 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    # +++your code here+++
-    return
+    a_length = len(a)
+    b_length = len(b)
+    a_front = ''
+    a_back = ''
+    b_front = ''
+    b_back = ''
+    if a_length % 2 == 0:
+           a_front = a[:a_length / 2]
+           a_back = a[a_length / 2:]
+    else:
+        a_front = a[:a_length // 2 + 1]
+        a_back = a[a_length // 2 + 1:]
+
+    if b_length % 2 == 0: # Is this allowed? Can I put an if statement after an else statement?
+           b_front = b[:b_length / 2]
+           b_back = b[b_length / 2:]
+    else:
+        b_front = b[:b_length // 2 + 1]
+        b_back = b[b_length // 2 + 1:]  
+    return a_front + b_front + a_back + b_back
 
 
 # Simple provided test() function used in main() to print

@@ -20,15 +20,20 @@
 
 
 # Body
-
+def count(word, letter):
+	number = 0
+	for i in word:
+		if letter == i:
+				number += 1
+	print(number)
 
 ###############################################################################
 def main():
 
     # Remove print("Hello World!") and add several functions calls to count()
     # below, passing various strings and letters
-    print("Hello World!")
-
+    count('banana', 'a')
+    count('anna', 'b')
 
 if __name__ == '__main__':
     main()

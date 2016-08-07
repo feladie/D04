@@ -21,15 +21,24 @@
 
 ###############################################################################
 # Imports
-
+import math
 
 # Body
-
+def eval_loop():
+	user_input = str(input('Input: '))
+	done = 'done'
+	last_exp = ''
+	while (user_input != done):
+		last_exp = repr(eval(user_input))
+		print(last_exp)	
+		user_input = str(input('Input: '))
+	else: 
+		return last_exp
+	# Tried type(math.pi) as input, but it doesn't work. :(		
 
 ###############################################################################
 def main():
-    pass  # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+    eval_loop()
 
 if __name__ == '__main__':
     main()

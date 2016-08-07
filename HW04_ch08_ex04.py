@@ -14,7 +14,7 @@
 
 
 def any_lowercase1(s):
-    """Explain what is wrong, if anything, here.
+    """The any_lowercase1(s) function will terminate after the first character is examined because of the return statement.
     """
     for c in s:
         if c.islower():
@@ -24,7 +24,8 @@ def any_lowercase1(s):
 
 
 def any_lowercase2(s):
-    """Explain what is wrong, if anything, here.
+    """This function is only examining whether or not the string 'c' is a lowercase letter (which it is),
+        so it will always return 'True'.
     """
     for c in s:
         if 'c'.islower():
@@ -34,7 +35,8 @@ def any_lowercase2(s):
 
 
 def any_lowercase3(s):
-    """Explain what is wrong, if anything, here.
+    """The flag will change with each letter in s, so if s ends with an upper-case letter but also contains lowercase letters, 
+    it will return False.
     """
     for c in s:
         flag = c.islower()
@@ -42,7 +44,9 @@ def any_lowercase3(s):
 
 
 def any_lowercase4(s):
-    """Explain what is wrong, if anything, here.
+    """Similar to the previous function, this examines each character of the string. 
+        If s ends with 2 upper-case letters but also contains lower-case letters, flag == False,
+        but the answer should be True.
     """
     flag = False
     for c in s:
@@ -51,7 +55,8 @@ def any_lowercase4(s):
 
 
 def any_lowercase5(s):
-    """Explain what is wrong, if anything, here.
+    """This function will stop at the first uppercase character it comes across and return False. 
+        If the first character is uppercase and the rest are lowercase, the result will be False.
     """
     for c in s:
         if not c.islower():
